@@ -1,0 +1,30 @@
+{% load static %} 
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../static/style.css">
+  <link rel="stylesheet" href="../static/reset.css">
+  <style>
+    body{
+      background-color: #53798B ;
+    }
+  </style>
+  <title>FitMate</title>
+</head>
+<body>
+  <div class="start">
+    <img class="start_img" src="../static/photo-nic-KhHUkOXQo4k-unsplash.jpg" alt="">
+    <div class="FitMate">FitMate</div>
+    <div class="sub">あなたの身体を知り、より強く。</div>
+    <img class="logo" src="../static/FitMate-logo-black.png" alt="">
+  </div>
+
+  <script>
+    setTimeout(function(){
+      window.location.href = '{%url "login"%}';}, 4*1000);
+  </script>
+</body>
+</html>

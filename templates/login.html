@@ -1,0 +1,83 @@
+<!-- <!doctype html>
+<html lang="ja">
+<head>
+    <meta charset="utf-8">
+    <title>ログイン</title>
+</head>
+<body>
+    <h1>ログイン</h1>
+    <p>{{message}}</p>
+    <form action="{% url 'login'%}" method="post">
+    {% csrf_token %}
+        {{ form.as_p }}
+        <p><input type="hidden" name="next" value="{{next}}"></p>
+        <p><input type="submit" value="ログイン"></p>
+    </form>
+    <p><a href="{% url 'signup'%}">ユーザー登録</a></p>
+</body>
+</html> -->
+
+{% load static %} 
+{% load widget_tweaks %}
+
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/style.css">
+    <link rel="stylesheet" href="../static/reset.css">
+    </style>
+    <title>FitMateへようこそ</title>
+  </head>
+<body>
+  <div class="login">
+    <img class="logo" src="../static/FitMate-logo-black.png" alt="">
+    <div class="user_login">
+    </div>
+    <div class="welcom">
+      FitMateへようこそ
+    </div>
+    
+    <form action="{% url 'login'%}" method="post">
+      {{ form.non_field_errors }}
+      {% csrf_token %}
+          <div class="username">
+            ユーザ名 
+          </div>
+          <div class="password">
+            パスワード
+          </div>
+          {% for field in form %}
+          {% if forloop.counter == 1 %}
+            {{ field | add_class:"rectangle2"}}
+            {{ field.errors }}
+          {% endif %}
+          {% if forloop.counter == 2 %}
+            {{ field | add_class:"rectangle3"}}
+            {{ field.errors }}
+          {% endif %}
+          {% endfor %}
+      <div class="forget_pass">
+        <a href="#">パスワードをお忘れでですか？</a>
+      </div>
+      <div class="user_create">
+        <a href="{% url 'signup'%}">初めての方は<br>こちら</a>
+      </div>
+      <div class="login_rec">
+      </div>
+      <div class="login_btn">
+        <p><input type="hidden" name="next" value="{{next}}"></p>
+        <p><input type="submit" value="ログイン"></p>
+      </div>
+    </form>
+    <div>
+      <img class="workingout_img" src="../static/undraw_working_out_re_nhkg.svg" alt="">
+    </div>
+    <div class="login_txt">
+      おかえりなさい
+    </div>
+  </div>
+</body>
+</html>

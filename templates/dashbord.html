@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% block content %}
+<header>
+  <div class="login">
+    <a href="{% url 'login' %}"><img class="logo" src="../static/FitMate-logo-black.png" alt=""></a>
+  </div>
+  <div class="hamburger-menu">
+      <label for="menu-btn-check" class="menu-btn"><span></span></label>
+  </div>
+</header>
+<div class="container-breakinside">
+  <div class="item">
+    <h2 class="user_info">ユーザ情報</h2>
+    <p class="user_info">体重：○○kg</p>
+    <p class="user_info">目標体重：○○kg</p>
+    <p class="user_info">目標体重まで：○○kg</p>
+    <p class="user_info">BMI：○○</p>
+    <a href="#" class="registar">記録する</a>
+  </div>
+  <div class="item">
+    <h2 class="user_info">記録</h2>
+    <p class="user_info">体重：済</p>
+    <p class="user_info">運動：済</p>
+    <p class="user_info">食事：未</p>
+  </div>
+  <div class="item">
+    <h2 class="user_info">トレーニング</h2>
+    <p class="user_info">有酸素運動：済</p>
+    <p class="user_info">筋トレ：未</p>
+    <a href="#" class="registar">記録する</a>
+  </div>
+  <div class="item">
+    <h2 class="user_info">本日の<br>摂取カロリー</h2>
+    <p class="user_info">○○○○kcal</p>
+    <p class="user_info">タンパク質：○○g</p>
+    <p class="user_info">脂質：○○g</p>
+    <p class="user_info">炭水化物：○○g</p>
+    <a href="#" class="registar">記録する</a>
+  </div>
+</div>
+{% endblock content %}
