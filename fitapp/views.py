@@ -9,6 +9,7 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 class Welcome(TemplateView):
     template_name = 'welcome.html'
 
+@login_required
 def dashbord_view(request):
     user = request.user
 
@@ -42,7 +43,7 @@ def signup_view(request):
 
 def login_view(request):
     if request.method == 'POST':
-        next = request.POST.get('next')
+        # next = request.POST.get('next')
         form = LoginForm(request, data=request.POST)
 
         if form.is_valid():
