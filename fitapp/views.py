@@ -9,15 +9,26 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 class Welcome(TemplateView):
     template_name = 'welcome.html'
 
+def dashbord_view(request):
+    user = request.user
+
+    params = {
+        'weight': user.weight,
+        'target_weight': user.target_weight,
+        'reach_target': user.reach_target,
+        'bmi': user.get_bmi,
+    }
+
+    return render(request, 'dashbord.html', params)
+
+
 def signup_view(request):
     if request.method == 'POST':
-
         form = SignupForm(request.POST)
         if form.is_valid():
             user = form.save()
             login(request, user)
             return redirect(to='/dashbord/')
-
     else:
         form = SignupForm()
     
@@ -27,9 +38,7 @@ def signup_view(request):
 
     return render(request, 'signup.html', param)
 
-class Dashbord(LoginRequiredMixin, TemplateView):
-    template_name = 'dashbord.html'
-    login_url = '/login/'
+
 
 def login_view(request):
     if request.method == 'POST':

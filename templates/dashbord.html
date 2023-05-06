@@ -11,10 +11,12 @@
 <div class="container-breakinside">
   <div class="item">
     <h2 class="user_info">ユーザ情報</h2>
-    <p class="user_info">体重：○○kg</p>
-    <p class="user_info">目標体重：○○kg</p>
-    <p class="user_info">目標体重まで：○○kg</p>
-    <p class="user_info">BMI：○○</p>
+    {% if user.is_authenticated %}
+    {% endif %}
+    <p class="user_info">体重：{{ user.weight }}kg</p>
+    <p class="user_info">目標体重：{{ user.target_weight }}kg</p>
+    <p class="user_info">目標体重まで：{{ user.reach_target |floatformat:2}}kg</p>
+    <p class="user_info">BMI：{{ user.get_bmi |floatformat:2}}</p>
     <a href="#" class="registar">記録する</a>
   </div>
   <div class="item">
