@@ -33,7 +33,12 @@
   </head>
 <body>
   <div class="login">
-    <img class="logo" src="../static/FitMate-logo-black.png" alt="">
+    <div class="header">
+      <img class="logo" src="../static/FitMate-logo-black.png" alt="">
+      <div class="user_create">
+        <a href="{% url 'signup'%}">初めての方は<br>こちら</a>
+      </div>
+    </div>
     <div class="user_login">
     </div>
     <div class="welcom">
@@ -62,13 +67,10 @@
       <div class="forget_pass">
         <a href="#">パスワードをお忘れでですか？</a>
       </div>
-      <div class="user_create">
-        <a href="{% url 'signup'%}">初めての方は<br>こちら</a>
-      </div>
+      
       <div class="login_rec">
       </div>
       <div class="login_btn">
-        <p><input type="hidden" name="next" value="{{next}}"></p>
         <p><input type="submit" value="ログイン"></p>
       </div>
     </form>

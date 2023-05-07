@@ -1,80 +1,73 @@
-<!doctype html>
-<html lang="ja">
-<head>
-    <meta charset="utf-8">
-    <title>ログイン</title>
-</head>
-<body>
-    <h1>ログイン</h1>
-    <p>{{message}}</p>
-    <form action="{% url 'signup'%}" method="post">
-    {% csrf_token %}
-        {{ form.as_p }}
-        <p><input type="submit" value="ログイン"></p>
-    </form>
-    <p><a href="{% url 'signup'%}">ユーザー登録</a></p>
-</body>
-</html>
-<!-- 
+{% extends 'base.html' %}
 {% load static %} 
 {% load widget_tweaks %}
-
-<!DOCTYPE html>
-<html lang="ja">
-  <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../static/style.css">
-    <link rel="stylesheet" href="../static/reset.css">
-    </style>
-    <title>FitMateへようこそ</title>
-  </head>
-<body>
+{% block content %}
   <div class="login">
-    <img class="logo" src="../static/FitMate-logo-black.png" alt="">
-    <div class="user_login">
+    <div class="header">
+      <img class="logo" src="../static/FitMate-logo-black.png" alt="">
     </div>
-    <div class="welcom">
-      ユーザ登録
-    </div>
+    <p class="user_info_text">あなたのユーザ情報を教えてください。</p>
     
-    <form action="{% url 'login'%}" method="post">
+    <form action="{% url 'signup'%}" method="post">
       {{ form.non_field_errors }}
       {% csrf_token %}
-          <div class="username">
+          <div class="signup_username">
             ユーザ名 
           </div>
-          <div class="password">
+          <div class="signup_email">
+            メールアドレス
+          </div>
+          <div class="signup_height">
+            身長
+          </div>
+          <div class="signup_weight">
+            体重
+          </div>
+          <div class="signup_targetweight">
+            目標体重
+          </div>
+          <div class="signup_password1">
             パスワード
+          </div>
+          <div class="signup_password2">
+            パスワード※確認用
           </div>
           {% for field in form %}
           {% if forloop.counter == 1 %}
-            {{ field | add_class:"rectangle2"}}
+            {{ field | add_class:"username_rec"}}
             {{ field.errors }}
           {% endif %}
           {% if forloop.counter == 2 %}
-            {{ field | add_class:"rectangle3"}}
+            {{ field | add_class:"email_rec"}}
+            {{ field.errors }}
+          {% endif %}
+          {% if forloop.counter == 3 %}
+            {{ field | add_class:"height_rec"}}
+            {{ field.errors }}
+          {% endif %}
+          {% if forloop.counter == 4 %}
+            {{ field | add_class:"weight_rec"}}
             {{ field.errors }}
           {% endif %}
           {% if forloop.counter == 5 %}
-            {{ field | add_class:"rectangle4"}}
+            {{ field | add_class:"targetweight_rec"}}
+            {{ field.errors }}
+          {% endif %}
+          {% if forloop.counter == 6 %}
+            {{ field | add_class:"password1_rec"}}
+            {{ field.errors }}
+          {% endif %}
+          {% if forloop.counter == 7 %}
+            {{ field | add_class:"password2_rec"}}
             {{ field.errors }}
           {% endif %}
           {% endfor %}
-      <div class="login_rec">
+      <div class="signup_rec">
       </div>
-      <div class="login_btn">
-        <p><input type="hidden" name="next" value="{{next}}"></p>
+      <div class="signup_btn">
         <p><input type="submit" value="つぎへ"></p>
       </div>
     </form>
-    <div>
-      <img class="workingout_img" src="../static/undraw_mindfulness_uhb4.svg" alt="">
-    </div>
-    <div class="login_txt">
-      FitMateへ<br>ようこそ
-    </div>
-  </div>
-</body>
-</html> -->
+  <img class="workingout_img" src="../static/undraw_job_hunt_re_q203.svg" alt="">
+</div>
+{% endblock content %}
