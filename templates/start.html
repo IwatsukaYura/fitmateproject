@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="start_fit">
+  <div class="login">
+    <a href="{% url 'dashbord' %}"><img class="logo" src="../static/FitMate-logo-black.png" alt=""></a>
+  </div>
+  <div class="welcoming">
+    <img class="welcoming_img" src="../static/undraw_welcoming_re_x0qo.svg" alt="">
+    <div class="start_text">
+      <p>登録ありがとうございます！</p>
+      <div class="start_rec">
+        <a href="{% url 'dashbord' %}">FitMateをはじめる</a>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock content %}

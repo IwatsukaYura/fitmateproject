@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="header">
+  <div class="login">
+    <a href="{% url 'dashbord' %}"><img class="logo" src="../static/FitMate-logo-black.png" alt=""></a>
+  </div>
+</div>
+<div class="weight">
+  <div class="weight_record">
+    <p class="weight_direction">今日の体重を<br>入力してください</p>
+    <div class="today_weight">
+    </div>
+    <div class="record_btn">
+      <div class="record">
+        <p>記録</p>
+      </div>
+      <div class="detail">
+        <p>詳細</p>
+      </div>
+    </div>
+  </div>
+  <div>
+    <div class="circle">
+      <p class="last_weight">前回の体重</p>
+      <p class="display_weight">{{user.weight}}kg</p>
+      <div class="difference">増加</div>
+    </div>
+  </div>
+</div>
+{% endblock content %}

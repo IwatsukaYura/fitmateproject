@@ -1,8 +1,7 @@
 /* ここから全体のスタイル */
 html,body{
   height: 100%;
-  overflow-x: hidden;
-  /* overflow: hidden; */
+  /* overflow-x: hidden; */
   position: relative;
 }
 
@@ -554,4 +553,154 @@ a,a:hover,a:visited{
   font-size: 33px;
   background-color: #72AFAF;
   color: black;
+}
+
+/* ここまで */
+
+
+/* ここから */
+/* start.htmlのスタイル */
+.start_fit{
+  position: fixed;
+  left: 0px;
+  right: 0px;
+  top: 0px;
+  bottom:0px;
+}
+.welcoming{
+  display: flex;
+  background-color:#53798b;
+  padding-left: 300px;
+}
+
+.start_text{
+  color: #FFF;
+}
+
+.start_text p{
+  position: relative;
+  width: 400px;
+  letter-spacing: 0.7px;
+  font-size: 30px;
+  right: 85%;
+  top:20%;
+}
+
+
+.welcoming_img{
+  background-color:#53798b;
+  max-width: 37%;
+  height: auto;
+  padding-right: 400px;
+  padding-bottom: 300px;
+  }
+
+.start_rec{
+  background-color:#cf835d;
+  height:100px;
+  width:350px;
+  border-radius:20px;
+  position: relative;
+  right: 80%;
+  top:30%;
+}
+
+.start_rec a{
+  color: #FFF;
+  position: relative;
+  font-size:38px;
+  left: 4%;
+  top:34%;
+}
+/* ここまで */
+
+/* ここから */
+/* weight.htmlのスタイル */
+.circle{
+  display: inline-block;
+  width: 750px;
+  height: 750px;
+  border-radius: 50%;
+  background: #cf835d;
+  text-align:center;
+  margin-left: 150px;
+}
+
+
+.last_weight{
+  font-size: 45px;
+  line-height: 400px;
+}
+
+.display_weight{
+  font-size: 60px;
+  border-bottom: 5px solid white;
+  width: 600px;
+  margin-left: 80px;
+}
+
+
+.difference{
+  font-size: 30px;
+  height:70px;
+  width:200px;
+  border-radius:50px;
+  background-color:red;
+  line-height: 70px;
+  margin: 0 auto;
+  margin-top: 30px;
+}
+
+.weight_record{
+  padding-top: 15%;
+  padding-left: 10%;
+}
+.weight{
+  display: flex;
+  color: #FFF;
+}
+.weight_direction{
+  font-size: 40px;
+  text-align: center;
+}
+
+.record_btn{
+  display: flex;
+  margin-right: 40px;
+}
+
+.record {
+  height:50px;
+  width:150px;
+  border-radius:20px;
+  background-color:#cf835d;
+  line-height: 50px;
+}
+
+.record p{
+  text-align: center;
+  font-size: 38px;
+}
+
+.detail {
+  height:50px;
+  width:150px;
+  border-radius:20px;
+  background-color:#cf835d;
+  line-height: 50px;
+  margin-left: 40px;
+}
+
+.detail p{
+  text-align: center;
+  font-size: 38px;
+}
+
+.today_weight{
+  background-color:#ffffff;
+  height:60px;
+  width:276px;
+  margin-bottom: 30px;
+  margin-top: 40px;
+  margin-left: 30px;
 }
